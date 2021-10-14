@@ -5,8 +5,11 @@ You will be provided with the current state and the required state(password) of 
 **Input**
 
 x -> length of the combination lock
+
 c[x] -> current state of the combination lock
+
 r[x] -> password of the combination lock
+
 ```
 where c[x] and r[x] can both contain a sequence with letters from 
 a,b,c........x,y,z and digits from 0,1,2.....7,8,9.
