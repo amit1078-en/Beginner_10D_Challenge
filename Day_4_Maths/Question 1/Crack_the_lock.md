@@ -34,7 +34,9 @@ Single integer returning the minimum number of rotations to reach the password
 **Explanation:**
 
 > a -> z (In 1 step) 
+> 
 > 9 -> 1 (First step 0, Second step 9 ; total 2 step)
+> 
 > z -> a (In 1 step)
 
 **Input :**
@@ -47,4 +49,16 @@ Single integer returning the minimum number of rotations to reach the password
 
     20
 
+**Explanation :**
 
+As a->z requires 1 rotations anticlockwise;
+
+1->9 requires 2 rotations anticlockwise;
+
+z->p requires 10 rotations anticlockwise; 
+
+3->9 requires 4 rotations minimum and 
+
+c->z requires 3 rotations
+
+Total 20 Rotations Minimum
