@@ -19,7 +19,9 @@ then we will have series like this
 - We know pattern repeats after event 9 steps 
 
     0  1  1  2  3  5  8  13  21
+    
     0  1  1  2  3  5  8  13  21
+    
     0  1  1  2  3  5  8  13  21
 
 and we need to find the 15th occurrence 
