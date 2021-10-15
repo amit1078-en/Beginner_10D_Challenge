@@ -3,9 +3,14 @@
 
 
 **Difficulty: Easy**
-
+**Pre-Requisites: Basic Functions**
 ## Explanation
- 
+ In the given question we have to print the time of clock in 7-segment format. 
+We can write 7 different functions for each line of the output. The first function will take in the number as parameter and print the pattern corresponding to that number on first line. Rest of the functions also have a similar working.
+
+## Example
+If the input is "1900", then we will pass in 1,9,0,0 to first function. It will print "   ." corresponding to "1", then it will print "...." corresponding to 9 and then "...." again for 0. 
+Then we will repeat this step for rest of the lines by passing the number as parameter to remaining functions.
 **Example input:**
 
 > 1900
