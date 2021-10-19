@@ -24,3 +24,44 @@ First line of output contains the largest area and second line contains largest 
 
     Input  : points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
     Output : Area:2.00 and Perimter:4+2*(underroot 2)
+    
+Approach Simply Use Herons Formula to find the Area & Perimeter 
+
+Area of triangle ABC = √s(s-a)(s-b)(s-c), where s = Perimeter/2 = (a + b + c)/2
+
+We will use 3 nested loop since we want to find the max area we will consider all possible combinations
+
+Time Complexity ->O(N^3)
+Space Complexity -> O(1)
+
+```
+class Solution {
+public:
+    pair<double,double> largestTriangleArea(vector<vector<int>>& points) {
+    int n=points.size();
+    double maxArea=0;
+    double perimeter = 0;
+         double d1,d2,d3,area,s;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            for(int k=j+1;k<n;k++)
+            {
+                    d1=sqrt((double)pow(points[i][0]-points[j][0],2)+pow(points[i][1]-points[j][1],2));    
+                    d2=sqrt((double)pow(points[j][0]-points[k][0],2)+pow(points[j][1]-points[k][1],2));
+                    d3=sqrt((double)pow(points[i][0]-points[k][0],2)+pow(points[i][1]-points[k][1],2));
+                    s=(d1+d2+d3)/2.00000;
+                    area=(double)sqrt(s*(s-d1)*(s-d2)*(s-d3));
+                     perimeter = max(perimeter,d1+d2+d3);
+                        if(maxArea<area)
+                        maxArea=area;   
+            }
+        }
+    }
+    pair<double,double> answer;
+    answer.first = area;
+    answer.second = perimeter;
+    return answer;
+}
+};
