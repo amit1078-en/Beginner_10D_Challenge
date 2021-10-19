@@ -24,3 +24,41 @@ First line of output contains the largest area and second line contains largest 
 
     Input  : points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
     Output : Area:2.00 and Perimter:4+2*(underroot 2)
+
+Approach:
+The One Simple Approach is to use the herons formula which is used to find the area of triangle based on length of three sides we can also find perimeter using herons formula thank you
+
+Solution
+class Solution {
+public:
+    pair<double,double> largestTriangleArea(vector<vector<int>>& points) {
+    int n=points.size();
+    double maxArea=0;
+    double Perimeter = 0;
+    double d1,d2,d3,area,s;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            for(int k=j+1;k<n;k++)
+            {
+                d1=sqrt((double)pow(points[i][0]-points[j][0],2)+pow(points[i][1]-points[j][1],2));    
+                d2=sqrt((double)pow(points[j][0]-points[k][0],2)+pow(points[j][1]-points[k][1],2));
+                d3=sqrt((double)pow(points[i][0]-points[k][0],2)+pow(points[i][1]-points[k][1],2));
+                                   
+                s=(d1+d2+d3)/2.00000;
+                area=(double)sqrt(s*(s-d1)*(s-d2)*(s-d3));
+                
+                Perimeter = max(Perimeter,d1+d2+d3);
+                
+                 if(maxArea<area)
+                 maxArea=area;   
+            }
+        }
+    }
+    pair<double,double> answer;
+    answer.first=maxArea;
+    answer.second=Perimeter;
+    return answer;
+}
+};
