@@ -23,10 +23,10 @@ Calculate the values of x and y backwards as
 > y = x' - y'×floor(a/b)
 
 where x' and y' are the coefficients for q and q%p 
-> [x'×q +y'×(q%p) = GCD(q,p%q) = GCD(p,q)]
+> [x'×q + y'×(p%q) = GCD(q,p%q) = GCD(p,q)]
 
 and x and y are the coefficients for p and q 
-> [x×p +y×q = GCD(p,q)]
+> [x×p + y×q = GCD(p,q)]
 
 **Explanation:**
 
